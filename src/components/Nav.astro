@@ -1,0 +1,44 @@
+---
+import NavIcons from './NavIcons.tsx';
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-border)]/30
+         bg-[var(--color-surface)]/80 backdrop-blur-xl"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a
+      href="/"
+      class="group transition-transform duration-200 hover:scale-105"
+      aria-label="Jesse Patoka — Home"
+    >
+      <svg
+        viewBox="0 0 36 36"
+        class="h-9 w-9"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Shared vertical stroke (J stem + P stem merged) -->
+        <path
+          d="M 16 6 L 16 26 Q 16 31 11 31 L 8 31"
+          stroke="var(--color-electric)"
+          stroke-width="3.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="transition-all duration-300 group-hover:stroke-[var(--color-electric-light)]"
+        />
+        <!-- P bowl extending right from the shared stroke -->
+        <path
+          d="M 16 6 L 22 6 Q 29 6 29 13 Q 29 20 22 20 L 16 20"
+          stroke="var(--color-text-primary)"
+          stroke-width="3.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="transition-all duration-300 group-hover:stroke-[var(--color-electric-light)]"
+        />
+      </svg>
+    </a>
+
+    <NavIcons client:load />
+  </div>
+</header>

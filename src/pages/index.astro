@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.tsx';
+import About from '../components/About.tsx';
+import StravaDashboard from '../components/StravaDashboard.tsx';
+import Lab from '../components/Lab.tsx';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Nav />
+  <main>
+    <Hero client:load />
+    <About client:visible />
+    <StravaDashboard client:visible />
+    <Lab client:visible />
+  </main>
+  <Footer />
+</BaseLayout>
