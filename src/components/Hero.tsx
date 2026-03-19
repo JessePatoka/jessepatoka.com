@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, User } from 'lucide-react';
 
@@ -23,6 +23,13 @@ const fadeIn = {
 export default function Hero() {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (imgRef.current?.complete) {
+      setImgLoaded(true);
+    }
+  }, []);
 
   return (
     <section className="relative flex min-h-[90vh] items-center overflow-hidden px-6 pt-24 pb-12">
@@ -143,11 +150,15 @@ export default function Hero() {
               {/* Actual headshot — hidden until loaded */}
               {!imgError && (
                 <img
+                  ref={imgRef}
                   src="/headshot.jpg"
                   alt="Jesse Patoka"
                   className={`h-full w-full object-cover transition-opacity duration-300 ${imgLoaded ? 'opacity-100' : 'opacity-0 absolute'}`}
                   onLoad={() => setImgLoaded(true)}
-                  onError={() => setImgError(true)}
+                  onError={() => {
+                    setImgLoaded(false);
+                    setImgError(true);
+                  }}
                 />
               )}
 
