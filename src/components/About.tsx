@@ -15,22 +15,22 @@ const strengths = [
   {
     icon: Users,
     title: 'Team Building',
-    description: 'Scaling engineering orgs from founding engineers to 30+ person teams. Hiring, mentoring, and retaining top talent.',
+    description: 'Scaling engineering orgs and mentoring top talent. Led technical talent acquisition, established autonomous interview protocols, and fostered continuous learning via book clubs and AI sessions.',
   },
   {
     icon: Target,
     title: 'Technical Strategy',
-    description: 'Translating business objectives into technical roadmaps. Aligning cross-functional stakeholders around shared outcomes.',
+    description: 'Serving as the DRI for major architecture migrations (Atlassian Ops, Iterable). Drove adoption of Critical Incident SOPs, significantly improving cross-team communication and resolution times.',
   },
   {
     icon: Briefcase,
     title: 'Delivery at Scale',
-    description: 'Shipping complex platforms in retail and e-commerce. Building systems that handle peak traffic and real-world scale.',
+    description: 'Modernized release processes to support daily deployments, increasing release frequency by 29% and reducing hotfixes from 30% to 15% across a high-velocity e-commerce production pipeline.',
   },
   {
     icon: Lightbulb,
     title: 'Engineering Culture',
-    description: 'Fostering innovation through psychological safety, blameless retrospectives, and continuous improvement practices.',
+    description: 'Championed an AI-first engineering culture and enforced higher code quality standards by implementing strict 75% JaCoCo code coverage gates and maintaining "All A" SonarQube ratings.',
   },
 ];
 
