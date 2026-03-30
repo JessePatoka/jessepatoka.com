@@ -60,18 +60,48 @@ export default function Hero() {
             Available for opportunities
           </motion.div>
 
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={1}
-            className="text-4xl font-extrabold leading-[1.2] tracking-tight sm:text-5xl lg:text-6xl"
-          >
-            <span className="block text-[var(--color-text-primary)]">Jesse Patoka</span>
-            <span className="mt-2 block bg-gradient-to-r from-[var(--color-electric)] to-[var(--color-electric-light)] bg-clip-text text-transparent">
-              Engineering at Scale.
-            </span>
-          </motion.h1>
+          <div className="flex items-start justify-between gap-4 sm:gap-6">
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+              custom={1}
+              className="flex-1 text-4xl font-extrabold leading-[1.2] tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              <span className="block text-[var(--color-text-primary)]">Jesse Patoka</span>
+              <span className="mt-2 block bg-gradient-to-r from-[var(--color-electric)] to-[var(--color-electric-light)] bg-clip-text text-transparent">
+                Engineering at Scale.
+              </span>
+            </motion.h1>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              className="lg:hidden shrink-0 mt-2 relative"
+            >
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-[var(--color-electric)]/20 to-transparent blur-md" />
+              <div className="relative h-20 w-20 sm:h-28 sm:w-28 overflow-hidden rounded-full border border-[var(--color-border)] bg-[var(--color-surface-raised)]">
+                {!imgError && (
+                  <img
+                    src="/headshot.jpg"
+                    alt="Jesse Patoka"
+                    className={`h-full w-full object-cover transition-opacity duration-300 ${imgLoaded ? 'opacity-100' : 'opacity-0 absolute'}`}
+                    onLoad={() => setImgLoaded(true)}
+                    onError={() => {
+                      setImgLoaded(false);
+                      setImgError(true);
+                    }}
+                  />
+                )}
+                {(!imgLoaded || imgError) && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-surface-raised)]">
+                    <User size={24} className="text-[var(--color-electric)]" />
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
 
           <motion.p
             initial="hidden"
